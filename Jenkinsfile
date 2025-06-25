@@ -11,9 +11,13 @@ pipeline {
         stage('pull') {
             steps {
 
-                git branch: 'feature', url: 'https://github.com/skbasha-devops/Amazon-Jenkins'
+ branch: 'feature', url: 'https://github.com/skbasha-devops/Amazon-Jenkins'
 
              
+
+              
+
+
 
             }
         }
