@@ -1,20 +1,27 @@
 pipeline {
     agent any
+
     environment {
         // Use PATH+EXTRA to append to PATH properly
         PATH = "/opt/gradle/latest/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
     }
+
     stages {
 
-        stage('pull scm') {
+        stage('pull') {
             steps {
 
-                git branch: 'dev', url: 'https://github.com/skbasha-devops/Amazon-Jenkins'
+ branch: 'feature', url: 'https://github.com/skbasha-devops/Amazon-Jenkins'
 
-           
+             
+
+              
+
+
 
             }
         }
+
         stage('compile') {
             steps {
                 sh 'mvn compile'
@@ -27,14 +34,10 @@ pipeline {
             }
         }
 
-        
+
     }
 
   post{
-
-  success{
-     echo 'Build success'
-  }
     
   failure{
        echo 'Failure in the build'
